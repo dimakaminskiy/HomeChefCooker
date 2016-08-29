@@ -72,13 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="db.cs" />
     <Compile Include="InitializeDb.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
-    <Compile Include="DayMenuUserControl.cs">
+    <Compile Include="Controls\DayMenuUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DayMenuUserControl.Designer.cs">
+    <Compile Include="Controls\DayMenuUserControl.Designer.cs">
       <DependentUpon>DayMenuUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainForm.cs">
@@ -98,7 +97,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DayMenuUserControl.resx">
+    <EmbeddedResource Include="Controls\DayMenuUserControl.resx">
       <DependentUpon>DayMenuUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">

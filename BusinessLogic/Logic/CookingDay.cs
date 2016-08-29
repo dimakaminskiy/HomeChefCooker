@@ -11,6 +11,7 @@ namespace WinHomeMeal
         private Dinner _dinner;
         private Supper _supper;
         private int _number;
+        private string _mounth;
 
         public delegate void FullNameChangeEventHandler(object sender,string fullName);
         public event FullNameChangeEventHandler OnFullNameChangeEventHandler;
@@ -24,8 +25,9 @@ namespace WinHomeMeal
         public delegate void SupperDishChangeEventHandler(object sender);
         public event SupperDishChangeEventHandler OnSupperDishChange;
 
-
-        public string FullName { get { return Name + " " + Number; } }
+        
+        
+        public string FullName { get { return Mounth + " " + Number+" "+  Name; } }
         public CookingDay( int id )
         {
             Id = id;
@@ -50,6 +52,17 @@ namespace WinHomeMeal
             set
             {
                 _number = value;
+                OnOnFullNameChangeEventHandler(FullName);
+            }
+        }
+
+
+        public string Mounth    
+        {
+            get { return _mounth; }
+            set
+            {
+                _mounth = value;
                 OnOnFullNameChangeEventHandler(FullName);
             }
         }

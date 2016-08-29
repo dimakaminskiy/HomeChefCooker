@@ -17,15 +17,13 @@ namespace WinHomeMeal
         public MainForm()
         {
             InitializeComponent();
-
-            DayMenuControls = Controls.OfType<DayMenuUserControl>().ToArray();
-
-         
+            DayMenuControls = flowLayoutPanel1.Controls.OfType<DayMenuUserControl>().ToArray();
 
             DataManager = UnitOfWork.GetInstance();
             Initializer = new InitializerDb(DataManager);
             InitializeComponents();
-         }
+
+        }
         public void InitializeComponents()
         {
             InitializeDataBase();
@@ -47,13 +45,27 @@ namespace WinHomeMeal
         void InitializeCooker()
         {
             Cooker = new ChiefCooker();
+          
+
 
             foreach (var cookingDay in Cooker.Days)
             {
+                cookingDay.OnFullNameChangeEventHandler += CookingDay_OnFullNameChangeEventHandler;
                 cookingDay.OnBreakfastDishChange += CookingDay_OnBreakfastDishChange;
                 cookingDay.OnDinnerDishChange += CookingDay_OnDinnerDishChange;
             }
 
+            Cooker.InitializeDays();
+        }
+
+        private void CookingDay_OnFullNameChangeEventHandler(object sender, string fullName)
+        {
+            var day = sender as CookingDay;
+            if (day == null) return;
+
+            int id = day.Id;
+            var control = GetDayMenuUserControlById(id);
+            control.DayFullName = fullName;
         }
 
         private void CookingDay_OnDinnerDishChange(object sender)

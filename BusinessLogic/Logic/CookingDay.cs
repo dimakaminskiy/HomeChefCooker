@@ -11,7 +11,8 @@ namespace WinHomeMeal
         private Dinner _dinner;
         private Supper _supper;
         private int _number;
-        private string _mounth;
+      
+        private int _mounth;
 
         public delegate void FullNameChangeEventHandler(object sender,string fullName);
         public event FullNameChangeEventHandler OnFullNameChangeEventHandler;
@@ -27,7 +28,7 @@ namespace WinHomeMeal
 
         
         
-        public string FullName { get { return Mounth + " " + Number+" "+  Name; } }
+        public string FullName { get { return Number + " "+ MounthString + " " +  Name; } }
         public CookingDay( int id )
         {
             Id = id;
@@ -56,8 +57,12 @@ namespace WinHomeMeal
             }
         }
 
+        public string MounthString
+        {
+           get { return mounths[Mounth];}
+        }
 
-        public string Mounth    
+        public int Mounth       
         {
             get { return _mounth; }
             set
@@ -66,6 +71,13 @@ namespace WinHomeMeal
                 OnOnFullNameChangeEventHandler(FullName);
             }
         }
+
+        private string[] mounths =
+        {
+            "Января", "Февраля", "Марта",
+            "Апреля", "Мая", "Июня", "Июля", "Августа",
+            "Сентября", "Октября", "Ноября", "Декабря"
+        };
 
         public bool IsWeekDay   
         {

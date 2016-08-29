@@ -65,7 +65,7 @@ namespace BusinessLogic.Logic
                 var day = Days[i];
                 day.Name = culture.DateTimeFormat.GetShortestDayName(data.DayOfWeek);
                 day.Number = data.Day;
-                day.Mounth= culture.DateTimeFormat.GetMonthName(data.Month);
+                day.Mounth = day.Mounth;
 
                 //= new CookingDay(i+1)
                 //{
@@ -97,6 +97,10 @@ namespace BusinessLogic.Logic
         public void CreateMenu()
         {
            
+
+
+
+
             OnOnCreatedMenu();
         }
 

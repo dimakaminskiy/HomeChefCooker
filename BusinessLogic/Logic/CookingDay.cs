@@ -1,114 +1,43 @@
-using System.Runtime.InteropServices;
-
+using System;
 namespace WinHomeMeal
 {
     public class CookingDay
     {
-        
-        private string _name;
-        private bool _isWeekDay;
-        private Breakfast _breakfast;
-        private Dinner _dinner;
-        private Supper _supper;
-        private int _number;
-      
-        private int _mounth;
+        public CookingDay(DateTime dateTime)
+        {
+            _dateTime = dateTime;
+            Id = _counter;
+            _counter++;
+        }
+        public  int Id { get; private set; }
+        public int Day { get { return _dateTime.Day; } }
+        public string Mounth { get { return _mounths[_dateTime.Month]; } }
+        public  string DayOfWeek { get { return _daysOfWeek[(int) CurrentDateTime.DayOfWeek]; } }
+        public  DateTime CurrentDateTime { get { return _dateTime; } }
+        public string FullName { get { return string.Format("{0} {1} {2}", DayOfWeek, Mounth, Day); } }
+        public  bool IsWeekDay { get { return DayOfWeek == "ВС" || DayOfWeek == "СБ"; } }
 
-        public delegate void FullNameChangeEventHandler(object sender,string fullName);
-        public event FullNameChangeEventHandler OnFullNameChangeEventHandler;
-
-        public delegate void BreakfastDishChangeEventHandler(object sender);
+        public delegate void BreakfastDishChangeEventHandler(object sender, Breakfast breakfast);
         public event BreakfastDishChangeEventHandler OnBreakfastDishChange;
 
-        public delegate void DinnerDishChangeEventHandler(object sender);
+        public delegate void DinnerDishChangeEventHandler(object sender, Dinner dinner);
         public event DinnerDishChangeEventHandler OnDinnerDishChange;
 
-        public delegate void SupperDishChangeEventHandler(object sender);
+        public delegate void SupperDishChangeEventHandler(object sender, Supper supper);
         public event SupperDishChangeEventHandler OnSupperDishChange;
 
-        
-        
-        public string FullName { get { return Number + " "+ MounthString + " " +  Name; } }
-        public CookingDay( int id )
-        {
-            Id = id;
-            _breakfast = new Breakfast();
-        }
 
-        public int Id { get;  private set; }
-
-        public string Name  
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                OnOnFullNameChangeEventHandler(FullName);
-            }
-        }
-
-        public int Number
-        {
-            get { return _number; }
-            set
-            {
-                _number = value;
-                OnOnFullNameChangeEventHandler(FullName);
-            }
-        }
-
-        public string MounthString
-        {
-           get { return mounths[Mounth];}
-        }
-
-        public int Mounth       
-        {
-            get { return _mounth; }
-            set
-            {
-                _mounth = value;
-                OnOnFullNameChangeEventHandler(FullName);
-            }
-        }
-
-        private string[] mounths =
-        {
-            "Января", "Февраля", "Марта",
-            "Апреля", "Мая", "Июня", "Июля", "Августа",
-            "Сентября", "Октября", "Ноября", "Декабря"
-        };
-
-        public bool IsWeekDay   
-        {
-            get { return _isWeekDay; }
-            set { _isWeekDay = value; }
-        }
-
-        public Breakfast Breakfast  
+        public Breakfast Breakfast
         {
             get { return _breakfast; }
-            set {
-                if (value != null)
-                {
-                    _breakfast = value;
-                    OnOnBreakfastDishChange();
-                }
-            }
-        }
-        public Dinner Dinner        
-        {
-            get { return _dinner; }
             set
             {
-                if (value != null)
-                {
-                   _dinner = value;
-                    OnOnDinnerDishChange(); 
-                }                  
+                _breakfast = value;
+                OnOnBreakfastDishChange(value);
             }
         }
-        public Supper Supper    
+
+        public Supper Supper
         {
             get { return _supper; }
             set
@@ -116,31 +45,54 @@ namespace WinHomeMeal
                 if (value != null)
                 {
                     _supper = value;
-                    OnOnSupperDishChange();
+                   OnOnSupperDishChange(value);
                 }
-               
+
             }
         }
 
-        
-        protected virtual void OnOnFullNameChangeEventHandler(string fullname)
+        public Dinner Dinner
         {
-            OnFullNameChangeEventHandler?.Invoke(this, fullname);
+            get { return _dinner; }
+            set
+            {
+                if (value != null)
+                {
+                    _dinner = value;
+                    OnOnDinnerDishChange(value);
+                }
+            }
         }
 
-        protected virtual void OnOnBreakfastDishChange()
+
+        private string[] _mounths =
         {
-            OnBreakfastDishChange?.Invoke(this);
+            "","Января", "Февраля", "Марта",
+            "Апреля", "Мая", "Июня", "Июля", "Августа",
+            "Сентября", "Октября", "Ноября", "Декабря"
+        };
+
+        private readonly string[] _daysOfWeek = {"", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"};
+        private static int _counter = 1;
+        private readonly DateTime _dateTime;
+        private Breakfast _breakfast;
+        private Supper _supper;
+        private Dinner _dinner;
+
+
+        protected virtual void OnOnBreakfastDishChange(Breakfast breakfast)
+        {
+            OnBreakfastDishChange?.Invoke(this, breakfast); 
         }
 
-        protected virtual void OnOnDinnerDishChange()
+        protected virtual void OnOnDinnerDishChange(Dinner dinner)
         {
-            OnDinnerDishChange?.Invoke(this);   
+            OnDinnerDishChange?.Invoke(this, dinner);   
         }
 
-        protected virtual void OnOnSupperDishChange()
+        protected virtual void OnOnSupperDishChange(Supper supper)
         {
-            OnSupperDishChange?.Invoke(this);   
+            OnSupperDishChange?.Invoke(this, supper);   
         }
     }
 

@@ -45,48 +45,45 @@ namespace WinHomeMeal
         void InitializeCooker()
         {
             Cooker = new ChiefCooker();
-          
+            var days =  Cooker.Days;
 
-
-            foreach (var cookingDay in Cooker.Days)
+            foreach (var day in days)
             {
-                cookingDay.OnFullNameChangeEventHandler += CookingDay_OnFullNameChangeEventHandler;
-                cookingDay.OnBreakfastDishChange += CookingDay_OnBreakfastDishChange;
-                cookingDay.OnDinnerDishChange += CookingDay_OnDinnerDishChange;
+                var control = GetDayMenuUserControlById(day.Id);
+                control.DayFullName = day.FullName;
             }
 
-            Cooker.InitializeDays();
         }
 
-        private void CookingDay_OnFullNameChangeEventHandler(object sender, string fullName)
-        {
-            var day = sender as CookingDay;
-            if (day == null) return;
+        //private void CookingDay_OnFullNameChangeEventHandler(object sender, string fullName)
+        //{
+        //    var day = sender as CookingDay;
+        //    if (day == null) return;
 
-            int id = day.Id;
-            var control = GetDayMenuUserControlById(id);
-            control.DayFullName = fullName;
-        }
+        //    int id = day.Id;
+        //    var control = GetDayMenuUserControlById(id);
+        //    control.DayFullName = fullName;
+        //}
 
-        private void CookingDay_OnDinnerDishChange(object sender)
-        {
-            var day = sender as CookingDay;
-            if (day==null) return;
+        //private void CookingDay_OnDinnerDishChange(object sender)
+        //{
+        //    var day = sender as CookingDay;
+        //    if (day==null) return;
 
-            int id = day.Id;
-            var control = GetDayMenuUserControlById(id);
-            control.DinnerFistDish = day.Dinner.FirstDish.Name;
-            control.DinnerSecondDish = day.Dinner.SecondDish.Name;
-        }
+        //    int id = day.Id;
+        //    var control = GetDayMenuUserControlById(id);
+        //    control.DinnerFistDish = day.Dinner.FirstDish.Name;
+        //    control.DinnerSecondDish = day.Dinner.SecondDish.Name;
+        //}
 
-        private void CookingDay_OnBreakfastDishChange(object sender)
-        {
-            var day = sender as CookingDay;
-            if (day == null) return;
-            int id = day.Id;
-            var control = GetDayMenuUserControlById(id);
-            control.Breakfast = day.Breakfast.BreakfastDish.Name;
-        }
+        //private void CookingDay_OnBreakfastDishChange(object sender)
+        //{
+        //    var day = sender as CookingDay;
+        //    if (day == null) return;
+        //    int id = day.Id;
+        //    var control = GetDayMenuUserControlById(id);
+        //    control.Breakfast = day.Breakfast.BreakfastDish.Name;
+        //}
 
         private  DayMenuUserControl GetDayMenuUserControlById(int id)
         {

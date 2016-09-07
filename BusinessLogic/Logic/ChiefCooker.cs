@@ -47,45 +47,11 @@ namespace BusinessLogic.Logic
 
             for (int i = 0; i < _maxDays; i++)
             {
-                Days[i] = new CookingDay(i+1);
+                Days[i] = new CookingDay(DateTime.Now.AddDays(i));
             }
-
-
-            _countMeatDay = 0;
-            _countFishDays = 0;
-          
         }
 
-        public  void InitializeDays()
-        {
-            var data = DateTime.Now;
-            var culture = new System.Globalization.CultureInfo("ru-ru");
-            for (int i = 0; i < _maxDays; i++)
-            {
-                var day = Days[i];
-                day.Name = culture.DateTimeFormat.GetShortestDayName(data.DayOfWeek);
-                day.Number = data.Day;
-                day.Mounth = day.Mounth;
-
-                //= new CookingDay(i+1)
-                //{
-                //    Number = data.Day,
-                //    Name = culture.DateTimeFormat.GetShortestDayName(data.DayOfWeek)
-                //};
-
-                if (day.Name != "Cб" && day.Name != "Вс")
-                {
-                    day.IsWeekDay = false;
-                }
-                else
-                {
-                    day.IsWeekDay = true;
-                }
-
-              //  Days.Add(day);
-                data = data.AddDays(1);
-            }
-         }
+      
 
 
         private void _createMenu()

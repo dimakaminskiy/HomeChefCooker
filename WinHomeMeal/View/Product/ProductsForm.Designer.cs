@@ -10,6 +10,8 @@ namespace WinHomeMeal.View.Product
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        public ListView ListProducts = null;
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -32,7 +34,7 @@ namespace WinHomeMeal.View.Product
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsForm));
-            this.listProducts = new System.Windows.Forms.ListView();
+            this.ListProducts = new System.Windows.Forms.ListView();
             this.ColumnProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDell = new System.Windows.Forms.Button();
@@ -43,23 +45,23 @@ namespace WinHomeMeal.View.Product
             // 
             // listProducts
             // 
-            this.listProducts.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.listProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListProducts.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.ListProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColumnProductName});
-            this.listProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listProducts.FullRowSelect = true;
-            this.listProducts.GridLines = true;
-            this.listProducts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listProducts.Location = new System.Drawing.Point(0, 0);
-            this.listProducts.Name = "listProducts";
-            this.listProducts.Size = new System.Drawing.Size(377, 397);
-            this.listProducts.TabIndex = 0;
-            this.listProducts.UseCompatibleStateImageBehavior = false;
-            this.listProducts.View = System.Windows.Forms.View.Details;
-            this.listProducts.VirtualListSize = 10;
-            this.listProducts.DoubleClick += new System.EventHandler(this.listProducts_DoubleClick);
+            this.ListProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ListProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListProducts.FullRowSelect = true;
+            this.ListProducts.GridLines = true;
+            this.ListProducts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.ListProducts.Location = new System.Drawing.Point(0, 0);
+            this.ListProducts.Name = "ListProducts";
+            this.ListProducts.Size = new System.Drawing.Size(377, 397);
+            this.ListProducts.TabIndex = 0;
+            this.ListProducts.UseCompatibleStateImageBehavior = false;
+            this.ListProducts.View = System.Windows.Forms.View.Details;
+            this.ListProducts.VirtualListSize = 10;
+            this.ListProducts.DoubleClick += new System.EventHandler(this.listProducts_DoubleClick);
             // 
             // ColumnProductName
             // 
@@ -121,7 +123,7 @@ namespace WinHomeMeal.View.Product
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 461);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listProducts);
+            this.Controls.Add(this.ListProducts);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -137,7 +139,6 @@ namespace WinHomeMeal.View.Product
 
         #endregion
 
-        private System.Windows.Forms.ListView listProducts;
         public System.Windows.Forms.ColumnHeader ColumnProductName;
         private GroupBox groupBox1;
         private Button btnDell;

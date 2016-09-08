@@ -1,4 +1,6 @@
-﻿namespace WinHomeMeal
+﻿using WinHomeMealControls.Controls;
+
+namespace WinHomeMeal
 {
     partial class MainForm
     {
@@ -50,21 +52,23 @@
             this.вставкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.выделитьвсеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.складToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dayMenuUserControl1 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl2 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl3 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl4 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl5 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl6 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl7 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl8 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl9 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl10 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl11 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl12 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl13 = new WinHomeMeal.DayMenuUserControl();
-            this.dayMenuUserControl14 = new WinHomeMeal.DayMenuUserControl();
+            this.dayMenuUserControl1 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl2 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl3 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl4 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl5 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl6 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl7 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl8 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl9 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl10 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl11 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl12 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl13 = new WinHomeMealControls.Controls.DayMenuUserControl();
+            this.dayMenuUserControl14 = new WinHomeMealControls.Controls.DayMenuUserControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -76,8 +80,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboDessert = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.складToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -256,6 +260,23 @@
             this.выделитьвсеToolStripMenuItem.Name = "выделитьвсеToolStripMenuItem";
             this.выделитьвсеToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.выделитьвсеToolStripMenuItem.Text = "Выделить &все";
+            // 
+            // складToolStripMenuItem
+            // 
+            this.складToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productsToolStripMenuItem,
+            this.categoriesToolStripMenuItem,
+            this.toolStripSeparator5});
+            this.складToolStripMenuItem.Name = "складToolStripMenuItem";
+            this.складToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.складToolStripMenuItem.Text = "Склад";
+            // 
+            // productsToolStripMenuItem
+            // 
+            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productsToolStripMenuItem.Text = "Продукты";
+            this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -579,20 +600,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Десерт в ";
             // 
-            // складToolStripMenuItem
+            // categoriesToolStripMenuItem
             // 
-            this.складToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productsToolStripMenuItem});
-            this.складToolStripMenuItem.Name = "складToolStripMenuItem";
-            this.складToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.складToolStripMenuItem.Text = "Склад";
+            this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
+            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoriesToolStripMenuItem.Text = "Категории";
+            this.categoriesToolStripMenuItem.Click += new System.EventHandler(this.categoriesToolStripMenuItem_Click);
             // 
-            // productsToolStripMenuItem
+            // toolStripSeparator5
             // 
-            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.productsToolStripMenuItem.Text = "Продукты";
-            this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
             // 
             // MainForm
             // 
@@ -672,6 +690,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem складToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }
 

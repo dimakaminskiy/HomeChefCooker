@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity.Core.Objects.DataClasses;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Repository.implementation;
 using WinHomeMeal.View.Product;
@@ -15,12 +10,13 @@ namespace WinHomeMeal.Presenter
     {
         public ProductsForm Form { get; set; }
         public List<Product> Products { get; set; }
-        public UnitOfWork DataManager { get; private set; }
-        public ListView ListProcucts { get { return Form.ListProducts; } }
+        public UnitOfWork DataManager { get; }
 
-
-
-
+        public ListView ListProcucts
+        {
+            get { return Form.ListProducts; }
+        }
+        
         public ProductsFormPresenter(ProductsForm form)
         {
             Form = form;
@@ -30,22 +26,23 @@ namespace WinHomeMeal.Presenter
 
         public void FillProducts()
         {
-           ListProcucts.Items.Clear();
-           ListProcucts.Items.AddRange(Products.Select(p => new ListViewItem(p.Name?.ToString()) {Tag = p.Id}).ToArray());
+            ListProcucts.Items.Clear();
+            ListProcucts.Items.AddRange(
+                Products.Select(p => new ListViewItem(p.Name?.ToString()) {Tag = p.Id}).ToArray());
         }
 
         public void EditProduct(int id)
         {
             var product = Products.FirstOrDefault(t => t.Id == id);
-            if (product== null) return;
+            if (product == null) return;
 
-            var f = new ProductEditForm(product) { Text = "Редактировать продукт" };
+            var f = new ProductEditForm(product) {Text = "Редактировать продукт"};
 
             if (f.ShowDialog() == DialogResult.OK)
             {
                 DataManager.ProductRepository.Update(product);
                 DataManager.Save();
-               
+
                 FillProducts();
 
                 foreach (ListViewItem lv in Form.ListProducts.Items)
@@ -55,7 +52,6 @@ namespace WinHomeMeal.Presenter
                         lv.Selected = true;
                         lv.Focused = true;
                         lv.EnsureVisible();
-
                     }
                     else
                     {
@@ -63,21 +59,20 @@ namespace WinHomeMeal.Presenter
                     }
                 }
             }
-
         }
 
         public void CreateProduct()
         {
-            var product =  new Product();
+            var product = new Product();
             var f = new ProductEditForm(product) {Text = "Новый продукт"};
             if (f.ShowDialog() == DialogResult.OK)
             {
-               DataManager.ProductRepository.Insert(product);
-               DataManager.Save();
-               Products.Add(product);
+                DataManager.ProductRepository.Insert(product);
+                DataManager.Save();
+                Products.Add(product);
                 Products = Products.OrderBy(t => t.Name).ToList();
 
-               FillProducts();
+                FillProducts();
 
                 foreach (ListViewItem lv in Form.ListProducts.Items)
                 {
@@ -86,7 +81,6 @@ namespace WinHomeMeal.Presenter
                         lv.Selected = true;
                         lv.Focused = true;
                         lv.EnsureVisible();
-
                     }
                     else
                     {
@@ -94,9 +88,6 @@ namespace WinHomeMeal.Presenter
                     }
                 }
             }
-           
-
-
         }
 
         public void DeleteProduct(int id)
@@ -104,14 +95,13 @@ namespace WinHomeMeal.Presenter
             var product = Products.FirstOrDefault(t => t.Id == id);
             if (product == null) return;
 
-            
-            var f = new ProductEditForm(product) { Text = "Удалить продукт" };
+
+            var f = new ProductEditForm(product) {Text = "Удалить продукт"};
             f.SetProductNameDisable(true);
             f.SetBtnSaveName("Удалить");
 
             if (f.ShowDialog() == DialogResult.OK)
             {
-
                 DataManager.ProductRepository.Delete(product);
                 DataManager.Save();
 
@@ -123,23 +113,17 @@ namespace WinHomeMeal.Presenter
 
                 if (Products.Count != 1)
                 {
-                    int newSelectedIndex = index - 1;
+                    var newSelectedIndex = index - 1;
                     if (newSelectedIndex < 0)
                         newSelectedIndex = index;
 
 
-                   var lv = ListProcucts.Items[newSelectedIndex];
+                    var lv = ListProcucts.Items[newSelectedIndex];
                     lv.Selected = true;
                     lv.Focused = true;
                     lv.EnsureVisible();
                 }
-
             }
-
-         
-
-
         }
-
     }
 }

@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="InitializeDb.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
+    <Compile Include="Presenter\CategorisFormPresenter.cs" />
     <Compile Include="Presenter\ProductsFormPresenter.cs" />
     <Compile Include="View\Category\CategorisForm.cs">
       <SubType>Form</SubType>
@@ -115,6 +116,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Category\CategorisForm.resx">
+      <DependentUpon>CategorisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Category\CategoryEditForm.resx">
+      <DependentUpon>CategoryEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

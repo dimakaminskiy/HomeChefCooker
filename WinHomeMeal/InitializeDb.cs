@@ -18,10 +18,10 @@ namespace WinHomeMeal
         public void Run()
         {
 
-            // InitializeCategoryRepository();
+             InitializeCategoryRepository();
             // InitializeMeasureRepository();
            // InitializeProductRepository();
-            //DataManager.Save();
+           // DataManager.Save();
         }
         private void InitializeMeasureRepository()
         {

@@ -1,4 +1,4 @@
-﻿namespace WinHomeMeal
+﻿namespace WinHomeMealControls.Controls
 {
     partial class DayMenuUserControl
     {

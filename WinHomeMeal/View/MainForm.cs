@@ -3,7 +3,9 @@ using System.Linq;
 using System.Windows.Forms;
 using BusinessLogic.Logic;
 using BusinessLogic.Repository.implementation;
+using WinHomeMeal.View.Category;
 using WinHomeMeal.View.Product;
+using WinHomeMealControls.Controls;
 
 namespace WinHomeMeal
 {
@@ -94,6 +96,12 @@ namespace WinHomeMeal
         private void productsToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var f = new ProductsForm();
+            f.ShowDialog();
+        }
+
+        private void categoriesToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var f = new CategorisForm();
             f.ShowDialog();
         }
     }

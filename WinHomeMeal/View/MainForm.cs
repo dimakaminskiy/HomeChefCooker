@@ -11,7 +11,6 @@ namespace WinHomeMeal
         public UnitOfWork DataManager { get; private set; }
         public ChiefCooker Cooker { get; set; }
         public InitializerDb Initializer { get; set; }
-
         IEnumerable<DayMenuUserControl> DayMenuControls { get; set; }
 
         public MainForm()
@@ -47,10 +46,11 @@ namespace WinHomeMeal
             Cooker = new ChiefCooker();
             var days =  Cooker.Days;
 
-            foreach (var day in days)
+            foreach (CookingDay day in days)
             {
                 var control = GetDayMenuUserControlById(day.Id);
                 control.DayFullName = day.FullName;
+              // day.
             }
 
         }

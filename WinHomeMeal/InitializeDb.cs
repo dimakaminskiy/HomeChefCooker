@@ -59,8 +59,7 @@ namespace WinHomeMeal
             }
             return false;
         }
-
-       private void InitializeCategoryRepository()
+        private void InitializeCategoryRepository()
        {
            string[] categories = {"Завтрак","Первые блюда", "Вторые блюда", "Мясное", "Рыба", "Десерт"};
 

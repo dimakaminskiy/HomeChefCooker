@@ -71,26 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\DishUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\DishUserControl.Designer.cs">
-      <DependentUpon>DishUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\IngredientUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\IngredientUserControl.Designer.cs">
-      <DependentUpon>IngredientUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="InitializeDb.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
-    <Compile Include="Controls\DayMenuUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\DayMenuUserControl.Designer.cs">
-      <DependentUpon>DayMenuUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Category\CategorisForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,12 +105,6 @@
     <Compile Include="View\Product\ProductsForm.Designer.cs">
       <DependentUpon>ProductsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\DishUserControl.resx">
-      <DependentUpon>DishUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\IngredientUserControl.resx">
-      <DependentUpon>IngredientUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -138,9 +114,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\DayMenuUserControl.resx">
-      <DependentUpon>DayMenuUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,11 +148,18 @@
       <Project>{cc8664cb-b587-43d9-9c72-f444c9419cb2}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WinHomeMealControls\WinHomeMealControls.csproj">
+      <Project>{1f4ca2c1-3786-49d3-8294-d09368766578}</Project>
+      <Name>WinHomeMealControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Продукты.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -18,9 +18,9 @@ namespace WinHomeMeal
         public void Run()
         {
 
-           // InitializeCategoryRepository();
+            // InitializeCategoryRepository();
             // InitializeMeasureRepository();
-            //InitializeProductRepository();
+           // InitializeProductRepository();
             //DataManager.Save();
         }
         private void InitializeMeasureRepository()
@@ -49,6 +49,8 @@ namespace WinHomeMeal
             {
                 DataManager.ProductRepository.Insert( new Product() {Name = line});
             }
+            DataManager.Save();
+
         }
         protected static bool needToReOrder(string s1, string s2)
         {
@@ -61,7 +63,7 @@ namespace WinHomeMeal
         }
         private void InitializeCategoryRepository()
        {
-           string[] categories = {"Завтрак","Первые блюда", "Вторые блюда", "Мясное", "Рыба", "Десерт"};
+           string[] categories = {"Завтрак","Первые блюда", "Вторые блюда", "Мясное", "Рыба", "Десерт","Разное"};
 
            foreach (var category in categories)
            {

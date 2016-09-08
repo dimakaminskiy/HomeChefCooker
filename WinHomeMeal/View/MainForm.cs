@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BusinessLogic.Logic;
 using BusinessLogic.Repository.implementation;
+using WinHomeMeal.View.Product;
 
 namespace WinHomeMeal
 {
@@ -50,7 +51,7 @@ namespace WinHomeMeal
             {
                 var control = GetDayMenuUserControlById(day.Id);
                 control.DayFullName = day.FullName;
-              // day.
+             
             }
 
         }
@@ -90,6 +91,10 @@ namespace WinHomeMeal
             return DayMenuControls.Single(t => t.Id == id);
         }
 
-
+        private void productsToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var f = new ProductsForm();
+            f.ShowDialog();
+        }
     }
 }

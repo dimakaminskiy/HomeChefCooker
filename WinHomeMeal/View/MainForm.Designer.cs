@@ -51,17 +51,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.выделитьвсеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboDessert = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dayMenuUserControl1 = new WinHomeMeal.DayMenuUserControl();
             this.dayMenuUserControl2 = new WinHomeMeal.DayMenuUserControl();
             this.dayMenuUserControl3 = new WinHomeMeal.DayMenuUserControl();
@@ -76,6 +65,19 @@
             this.dayMenuUserControl12 = new WinHomeMeal.DayMenuUserControl();
             this.dayMenuUserControl13 = new WinHomeMeal.DayMenuUserControl();
             this.dayMenuUserControl14 = new WinHomeMeal.DayMenuUserControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboDessert = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.складToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,7 +89,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.правкаToolStripMenuItem});
+            this.правкаToolStripMenuItem,
+            this.складToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1162, 24);
@@ -276,6 +279,189 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1162, 691);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // dayMenuUserControl1
+            // 
+            this.dayMenuUserControl1.Breakfast = "Блюдо";
+            this.dayMenuUserControl1.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl1.DinnerFistDish = "Первое";
+            this.dayMenuUserControl1.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dayMenuUserControl1.Id = 1;
+            this.dayMenuUserControl1.Location = new System.Drawing.Point(3, 3);
+            this.dayMenuUserControl1.Name = "dayMenuUserControl1";
+            this.dayMenuUserControl1.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl1.TabIndex = 0;
+            this.dayMenuUserControl1.Tag = "1";
+            // 
+            // dayMenuUserControl2
+            // 
+            this.dayMenuUserControl2.Breakfast = "Блюдо";
+            this.dayMenuUserControl2.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl2.DinnerFistDish = "Первое";
+            this.dayMenuUserControl2.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl2.Id = 2;
+            this.dayMenuUserControl2.Location = new System.Drawing.Point(169, 3);
+            this.dayMenuUserControl2.Name = "dayMenuUserControl2";
+            this.dayMenuUserControl2.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl2.TabIndex = 1;
+            this.dayMenuUserControl2.Tag = "2";
+            // 
+            // dayMenuUserControl3
+            // 
+            this.dayMenuUserControl3.Breakfast = "Блюдо";
+            this.dayMenuUserControl3.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl3.DinnerFistDish = "Первое";
+            this.dayMenuUserControl3.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl3.Id = 3;
+            this.dayMenuUserControl3.Location = new System.Drawing.Point(335, 3);
+            this.dayMenuUserControl3.Name = "dayMenuUserControl3";
+            this.dayMenuUserControl3.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl3.TabIndex = 2;
+            this.dayMenuUserControl3.Tag = "3";
+            // 
+            // dayMenuUserControl4
+            // 
+            this.dayMenuUserControl4.Breakfast = "Блюдо";
+            this.dayMenuUserControl4.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl4.DinnerFistDish = "Первое";
+            this.dayMenuUserControl4.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl4.Id = 4;
+            this.dayMenuUserControl4.Location = new System.Drawing.Point(501, 3);
+            this.dayMenuUserControl4.Name = "dayMenuUserControl4";
+            this.dayMenuUserControl4.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl4.TabIndex = 3;
+            this.dayMenuUserControl4.Tag = "4";
+            // 
+            // dayMenuUserControl5
+            // 
+            this.dayMenuUserControl5.Breakfast = "Блюдо";
+            this.dayMenuUserControl5.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl5.DinnerFistDish = "Первое";
+            this.dayMenuUserControl5.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl5.Id = 5;
+            this.dayMenuUserControl5.Location = new System.Drawing.Point(667, 3);
+            this.dayMenuUserControl5.Name = "dayMenuUserControl5";
+            this.dayMenuUserControl5.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl5.TabIndex = 4;
+            this.dayMenuUserControl5.Tag = "5";
+            // 
+            // dayMenuUserControl6
+            // 
+            this.dayMenuUserControl6.Breakfast = "Блюдо";
+            this.dayMenuUserControl6.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl6.DinnerFistDish = "Первое";
+            this.dayMenuUserControl6.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl6.Id = 6;
+            this.dayMenuUserControl6.Location = new System.Drawing.Point(833, 3);
+            this.dayMenuUserControl6.Name = "dayMenuUserControl6";
+            this.dayMenuUserControl6.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl6.TabIndex = 5;
+            this.dayMenuUserControl6.Tag = "6";
+            // 
+            // dayMenuUserControl7
+            // 
+            this.dayMenuUserControl7.Breakfast = "Блюдо";
+            this.dayMenuUserControl7.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl7.DinnerFistDish = "Первое";
+            this.dayMenuUserControl7.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl7.Id = 7;
+            this.dayMenuUserControl7.Location = new System.Drawing.Point(999, 3);
+            this.dayMenuUserControl7.Name = "dayMenuUserControl7";
+            this.dayMenuUserControl7.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl7.TabIndex = 6;
+            this.dayMenuUserControl7.Tag = "7";
+            // 
+            // dayMenuUserControl8
+            // 
+            this.dayMenuUserControl8.Breakfast = "Блюдо";
+            this.dayMenuUserControl8.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl8.DinnerFistDish = "Первое";
+            this.dayMenuUserControl8.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl8.Id = 8;
+            this.dayMenuUserControl8.Location = new System.Drawing.Point(3, 299);
+            this.dayMenuUserControl8.Name = "dayMenuUserControl8";
+            this.dayMenuUserControl8.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl8.TabIndex = 7;
+            this.dayMenuUserControl8.Tag = "8";
+            // 
+            // dayMenuUserControl9
+            // 
+            this.dayMenuUserControl9.Breakfast = "Блюдо";
+            this.dayMenuUserControl9.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl9.DinnerFistDish = "Первое";
+            this.dayMenuUserControl9.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl9.Id = 9;
+            this.dayMenuUserControl9.Location = new System.Drawing.Point(169, 299);
+            this.dayMenuUserControl9.Name = "dayMenuUserControl9";
+            this.dayMenuUserControl9.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl9.TabIndex = 8;
+            this.dayMenuUserControl9.Tag = "9";
+            // 
+            // dayMenuUserControl10
+            // 
+            this.dayMenuUserControl10.Breakfast = "Блюдо";
+            this.dayMenuUserControl10.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl10.DinnerFistDish = "Первое";
+            this.dayMenuUserControl10.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl10.Id = 10;
+            this.dayMenuUserControl10.Location = new System.Drawing.Point(335, 299);
+            this.dayMenuUserControl10.Name = "dayMenuUserControl10";
+            this.dayMenuUserControl10.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl10.TabIndex = 9;
+            this.dayMenuUserControl10.Tag = "10";
+            // 
+            // dayMenuUserControl11
+            // 
+            this.dayMenuUserControl11.Breakfast = "Блюдо";
+            this.dayMenuUserControl11.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl11.DinnerFistDish = "Первое";
+            this.dayMenuUserControl11.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl11.Id = 11;
+            this.dayMenuUserControl11.Location = new System.Drawing.Point(501, 299);
+            this.dayMenuUserControl11.Name = "dayMenuUserControl11";
+            this.dayMenuUserControl11.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl11.TabIndex = 10;
+            this.dayMenuUserControl11.Tag = "11";
+            // 
+            // dayMenuUserControl12
+            // 
+            this.dayMenuUserControl12.Breakfast = "Блюдо";
+            this.dayMenuUserControl12.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl12.DinnerFistDish = "Первое";
+            this.dayMenuUserControl12.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl12.Id = 12;
+            this.dayMenuUserControl12.Location = new System.Drawing.Point(667, 299);
+            this.dayMenuUserControl12.Name = "dayMenuUserControl12";
+            this.dayMenuUserControl12.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl12.TabIndex = 11;
+            this.dayMenuUserControl12.Tag = "12";
+            // 
+            // dayMenuUserControl13
+            // 
+            this.dayMenuUserControl13.Breakfast = "Блюдо";
+            this.dayMenuUserControl13.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl13.DinnerFistDish = "Первое";
+            this.dayMenuUserControl13.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl13.Id = 13;
+            this.dayMenuUserControl13.Location = new System.Drawing.Point(833, 299);
+            this.dayMenuUserControl13.Name = "dayMenuUserControl13";
+            this.dayMenuUserControl13.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl13.TabIndex = 12;
+            this.dayMenuUserControl13.Tag = "13";
+            // 
+            // dayMenuUserControl14
+            // 
+            this.dayMenuUserControl14.Breakfast = "Блюдо";
+            this.dayMenuUserControl14.DayFullName = "ПН - 1 Сентября";
+            this.dayMenuUserControl14.DinnerFistDish = "Первое";
+            this.dayMenuUserControl14.DinnerSecondDish = "Второе";
+            this.dayMenuUserControl14.Id = 14;
+            this.dayMenuUserControl14.Location = new System.Drawing.Point(999, 299);
+            this.dayMenuUserControl14.Name = "dayMenuUserControl14";
+            this.dayMenuUserControl14.Size = new System.Drawing.Size(160, 290);
+            this.dayMenuUserControl14.TabIndex = 13;
+            this.dayMenuUserControl14.Tag = "14";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button4);
@@ -393,118 +579,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Десерт в ";
             // 
-            // dayMenuUserControl1
+            // складToolStripMenuItem
             // 
-            this.dayMenuUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dayMenuUserControl1.Location = new System.Drawing.Point(3, 3);
-            this.dayMenuUserControl1.Name = "dayMenuUserControl1";
-            this.dayMenuUserControl1.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl1.TabIndex = 0;
-            this.dayMenuUserControl1.Tag = "1";
+            this.складToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productsToolStripMenuItem});
+            this.складToolStripMenuItem.Name = "складToolStripMenuItem";
+            this.складToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.складToolStripMenuItem.Text = "Склад";
             // 
-            // dayMenuUserControl2
+            // productsToolStripMenuItem
             // 
-            this.dayMenuUserControl2.Location = new System.Drawing.Point(169, 3);
-            this.dayMenuUserControl2.Name = "dayMenuUserControl2";
-            this.dayMenuUserControl2.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl2.TabIndex = 1;
-            this.dayMenuUserControl2.Tag = "2";
-            // 
-            // dayMenuUserControl3
-            // 
-            this.dayMenuUserControl3.Location = new System.Drawing.Point(335, 3);
-            this.dayMenuUserControl3.Name = "dayMenuUserControl3";
-            this.dayMenuUserControl3.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl3.TabIndex = 2;
-            this.dayMenuUserControl3.Tag = "3";
-            // 
-            // dayMenuUserControl4
-            // 
-            this.dayMenuUserControl4.Location = new System.Drawing.Point(501, 3);
-            this.dayMenuUserControl4.Name = "dayMenuUserControl4";
-            this.dayMenuUserControl4.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl4.TabIndex = 3;
-            this.dayMenuUserControl4.Tag = "4";
-            // 
-            // dayMenuUserControl5
-            // 
-            this.dayMenuUserControl5.Location = new System.Drawing.Point(667, 3);
-            this.dayMenuUserControl5.Name = "dayMenuUserControl5";
-            this.dayMenuUserControl5.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl5.TabIndex = 4;
-            this.dayMenuUserControl5.Tag = "5";
-            // 
-            // dayMenuUserControl6
-            // 
-            this.dayMenuUserControl6.Location = new System.Drawing.Point(833, 3);
-            this.dayMenuUserControl6.Name = "dayMenuUserControl6";
-            this.dayMenuUserControl6.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl6.TabIndex = 5;
-            this.dayMenuUserControl6.Tag = "6";
-            // 
-            // dayMenuUserControl7
-            // 
-            this.dayMenuUserControl7.Location = new System.Drawing.Point(999, 3);
-            this.dayMenuUserControl7.Name = "dayMenuUserControl7";
-            this.dayMenuUserControl7.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl7.TabIndex = 6;
-            this.dayMenuUserControl7.Tag = "7";
-            // 
-            // dayMenuUserControl8
-            // 
-            this.dayMenuUserControl8.Location = new System.Drawing.Point(3, 299);
-            this.dayMenuUserControl8.Name = "dayMenuUserControl8";
-            this.dayMenuUserControl8.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl8.TabIndex = 7;
-            this.dayMenuUserControl8.Tag = "8";
-            // 
-            // dayMenuUserControl9
-            // 
-            this.dayMenuUserControl9.Location = new System.Drawing.Point(169, 299);
-            this.dayMenuUserControl9.Name = "dayMenuUserControl9";
-            this.dayMenuUserControl9.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl9.TabIndex = 8;
-            this.dayMenuUserControl9.Tag = "9";
-            // 
-            // dayMenuUserControl10
-            // 
-            this.dayMenuUserControl10.Location = new System.Drawing.Point(335, 299);
-            this.dayMenuUserControl10.Name = "dayMenuUserControl10";
-            this.dayMenuUserControl10.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl10.TabIndex = 9;
-            this.dayMenuUserControl10.Tag = "10";
-            // 
-            // dayMenuUserControl11
-            // 
-            this.dayMenuUserControl11.Location = new System.Drawing.Point(501, 299);
-            this.dayMenuUserControl11.Name = "dayMenuUserControl11";
-            this.dayMenuUserControl11.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl11.TabIndex = 10;
-            this.dayMenuUserControl11.Tag = "11";
-            // 
-            // dayMenuUserControl12
-            // 
-            this.dayMenuUserControl12.Location = new System.Drawing.Point(667, 299);
-            this.dayMenuUserControl12.Name = "dayMenuUserControl12";
-            this.dayMenuUserControl12.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl12.TabIndex = 11;
-            this.dayMenuUserControl12.Tag = "12";
-            // 
-            // dayMenuUserControl13
-            // 
-            this.dayMenuUserControl13.Location = new System.Drawing.Point(833, 299);
-            this.dayMenuUserControl13.Name = "dayMenuUserControl13";
-            this.dayMenuUserControl13.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl13.TabIndex = 12;
-            this.dayMenuUserControl13.Tag = "13";
-            // 
-            // dayMenuUserControl14
-            // 
-            this.dayMenuUserControl14.Location = new System.Drawing.Point(999, 299);
-            this.dayMenuUserControl14.Name = "dayMenuUserControl14";
-            this.dayMenuUserControl14.Size = new System.Drawing.Size(160, 290);
-            this.dayMenuUserControl14.TabIndex = 13;
-            this.dayMenuUserControl14.Tag = "14";
+            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productsToolStripMenuItem.Text = "Продукты";
+            this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -582,6 +670,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem складToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
     }
 }
 

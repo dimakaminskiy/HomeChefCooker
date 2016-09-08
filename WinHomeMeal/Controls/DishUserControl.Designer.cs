@@ -32,7 +32,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picImage = new System.Windows.Forms.PictureBox();
             this.ingredientUserControl8 = new WinHomeMeal.Controls.IngredientUserControl();
             this.ingredientUserControl7 = new WinHomeMeal.Controls.IngredientUserControl();
             this.ingredientUserControl6 = new WinHomeMeal.Controls.IngredientUserControl();
@@ -44,7 +44,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,7 +53,7 @@
             this.panel1.Controls.Add(this.webBrowser1);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.picImage);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -95,13 +95,13 @@
             this.label1.Text = "Название";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // picImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(439, 317);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picImage.Location = new System.Drawing.Point(16, 13);
+            this.picImage.Name = "picImage";
+            this.picImage.Size = new System.Drawing.Size(439, 317);
+            this.picImage.TabIndex = 0;
+            this.picImage.TabStop = false;
             // 
             // ingredientUserControl8
             // 
@@ -176,7 +176,7 @@
             this.Size = new System.Drawing.Size(889, 499);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,17 +185,17 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private IngredientUserControl ingredientUserControl8;
-        private IngredientUserControl ingredientUserControl7;
-        private IngredientUserControl ingredientUserControl6;
-        private IngredientUserControl ingredientUserControl5;
-        private IngredientUserControl ingredientUserControl4;
-        private IngredientUserControl ingredientUserControl3;
-        private IngredientUserControl ingredientUserControl2;
-        private IngredientUserControl ingredientUserControl1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.PictureBox picImage;
+        public IngredientUserControl ingredientUserControl8;
+        public IngredientUserControl ingredientUserControl7;
+        public IngredientUserControl ingredientUserControl6;
+        public IngredientUserControl ingredientUserControl5;
+        public IngredientUserControl ingredientUserControl4;
+        public IngredientUserControl ingredientUserControl3;
+        public IngredientUserControl ingredientUserControl2;
+        public IngredientUserControl ingredientUserControl1;
     }
 }

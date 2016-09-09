@@ -1,4 +1,6 @@
-﻿namespace WinHomeMeal
+﻿using System.Collections.Generic;
+
+namespace WinHomeMeal
 {
     public class Dish
     {
@@ -6,5 +8,6 @@
         public string Name { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+        public virtual IEnumerable<Ingredient> IngredientS { get; set; }
     }
 }

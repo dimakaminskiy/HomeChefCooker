@@ -87,6 +87,18 @@
     <Compile Include="View\Category\CategoryEditForm.Designer.cs">
       <DependentUpon>CategoryEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Dish\DishEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dish\DishEditForm.Designer.cs">
+      <DependentUpon>DishEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dish\Dishes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dish\Dishes.Designer.cs">
+      <DependentUpon>Dishes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

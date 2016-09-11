@@ -75,6 +75,7 @@
     <Compile Include="Presenter\DishesFormPresenter.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
     <Compile Include="Presenter\CategorisFormPresenter.cs" />
+    <Compile Include="Presenter\MeasuresFormPresenter.cs" />
     <Compile Include="Presenter\ProductsFormPresenter.cs" />
     <Compile Include="View\Category\CategorisForm.cs">
       <SubType>Form</SubType>
@@ -108,6 +109,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Measure\MeasureEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Measure\MeasureEditForm.Designer.cs">
+      <DependentUpon>MeasureEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Measure\MeasuresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Measure\MeasuresForm.Designer.cs">
+      <DependentUpon>MeasuresForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Product\ProductEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +148,17 @@
     <EmbeddedResource Include="View\Category\CategoryEditForm.resx">
       <DependentUpon>CategoryEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Dish\DishEditForm.resx">
+      <DependentUpon>DishEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Dish\DishesForm.resx">
       <DependentUpon>DishesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Measure\MeasuresForm.resx">
+      <DependentUpon>MeasuresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Product\ProductEditForm.resx">
       <DependentUpon>ProductEditForm.cs</DependentUpon>

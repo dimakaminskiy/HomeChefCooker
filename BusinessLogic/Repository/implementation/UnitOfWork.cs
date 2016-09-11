@@ -57,7 +57,7 @@ namespace BusinessLogic.Repository.implementation
                 return _productRepository;
             }
         }
-        public GenericRepository<Dish> CourseRepository
+        public GenericRepository<Dish> DishRepository
         {
             get
             {

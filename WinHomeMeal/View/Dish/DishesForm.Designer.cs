@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DishesForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.ListDishes = new System.Windows.Forms.ListView();
             this.ColumnProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,11 +38,9 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnApplyFilters = new System.Windows.Forms.Button();
-            this.comboDishType = new System.Windows.Forms.ComboBox();
             this.combDishCategory = new System.Windows.Forms.ComboBox();
             this.txtDishName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -81,7 +80,7 @@
             // ColumnProductName
             // 
             this.ColumnProductName.Text = "Продукты";
-            this.ColumnProductName.Width = 360;
+            this.ColumnProductName.Width = 375;
             // 
             // groupBox1
             // 
@@ -134,11 +133,9 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnApplyFilters);
-            this.panel2.Controls.Add(this.comboDishType);
             this.panel2.Controls.Add(this.combDishCategory);
             this.panel2.Controls.Add(this.txtDishName);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -151,7 +148,7 @@
             // 
             this.btnApplyFilters.AutoSize = true;
             this.btnApplyFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnApplyFilters.Location = new System.Drawing.Point(16, 323);
+            this.btnApplyFilters.Location = new System.Drawing.Point(17, 230);
             this.btnApplyFilters.Name = "btnApplyFilters";
             this.btnApplyFilters.Size = new System.Drawing.Size(149, 27);
             this.btnApplyFilters.TabIndex = 7;
@@ -159,28 +156,21 @@
             this.btnApplyFilters.UseVisualStyleBackColor = true;
             this.btnApplyFilters.Click += new System.EventHandler(this.btnApplyFilters_Click);
             // 
-            // comboDishType
-            // 
-            this.comboDishType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboDishType.FormattingEnabled = true;
-            this.comboDishType.Location = new System.Drawing.Point(16, 171);
-            this.comboDishType.Name = "comboDishType";
-            this.comboDishType.Size = new System.Drawing.Size(121, 24);
-            this.comboDishType.TabIndex = 6;
-            // 
             // combDishCategory
             // 
+            this.combDishCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combDishCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.combDishCategory.FormattingEnabled = true;
             this.combDishCategory.Location = new System.Drawing.Point(16, 94);
             this.combDishCategory.Name = "combDishCategory";
-            this.combDishCategory.Size = new System.Drawing.Size(121, 24);
+            this.combDishCategory.Size = new System.Drawing.Size(149, 24);
             this.combDishCategory.TabIndex = 5;
             // 
             // txtDishName
             // 
             this.txtDishName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtDishName.Location = new System.Drawing.Point(16, 261);
+            this.txtDishName.Location = new System.Drawing.Point(16, 180);
+            this.txtDishName.MaxLength = 150;
             this.txtDishName.Name = "txtDishName";
             this.txtDishName.Size = new System.Drawing.Size(149, 23);
             this.txtDishName.TabIndex = 4;
@@ -189,21 +179,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(13, 215);
+            this.label4.Location = new System.Drawing.Point(14, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Название";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(13, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Тип";
             // 
             // label2
             // 
@@ -233,8 +213,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DishesForm";
-            this.Text = "Dishes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Рецепты";
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -254,12 +239,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnApplyFilters;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ListView ListDishes;
         public System.Windows.Forms.ColumnHeader ColumnProductName;
-        public System.Windows.Forms.ComboBox comboDishType;
         public System.Windows.Forms.ComboBox combDishCategory;
         public System.Windows.Forms.TextBox txtDishName;
     }

@@ -43,7 +43,7 @@ namespace WinHomeMeal.View.Product
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listProducts
+            // ListProducts
             // 
             this.ListProducts.Alignment = System.Windows.Forms.ListViewAlignment.Left;
             this.ListProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -66,7 +66,7 @@ namespace WinHomeMeal.View.Product
             // ColumnProductName
             // 
             this.ColumnProductName.Text = "Продукты";
-            this.ColumnProductName.Width = 360;
+            this.ColumnProductName.Width = 373;
             // 
             // groupBox1
             // 

@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using BusinessLogic.Logic;
 using BusinessLogic.Repository.implementation;
 using WinHomeMeal.View.Category;
+using WinHomeMeal.View.Dish;
+using WinHomeMeal.View.Measure;
 using WinHomeMeal.View.Product;
 using WinHomeMealControls.Controls;
 
@@ -102,6 +104,18 @@ namespace WinHomeMeal
         private void categoriesToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var f = new CategorisForm();
+            f.ShowDialog();
+        }
+
+        private void recipesToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var f = new DishesForm();
+            f.Show();
+        }
+
+        private void measureToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var f = new MeasuresForm();
             f.ShowDialog();
         }
     }

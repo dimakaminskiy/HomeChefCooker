@@ -24,7 +24,6 @@ namespace WinHomeMeal.View.Dish
         public void Initialize()
         {
             Presenter.InitializeComboDishCategories();
-        
         }
 
         private void btnApplyFilters_Click(object sender, EventArgs e)
@@ -44,7 +43,8 @@ namespace WinHomeMeal.View.Dish
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+           var f = new DishEditForm( new WinHomeMeal.Dish());
+            f.ShowDialog();
         }
     }
 }

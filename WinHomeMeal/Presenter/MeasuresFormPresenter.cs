@@ -12,7 +12,7 @@ namespace WinHomeMeal.Presenter
         {
             Form = form;
             DataManager = UnitOfWork.GetInstance();
-            Measures = DataManager.MeasureRepository.Get().OrderBy(t => t.Name).ToList();
+            Measures = DataManager.MeasureRepository.Get(t => t.Id != 1).OrderBy(t => t.Name).ToList();
         }
 
         public MeasuresForm Form { get; }

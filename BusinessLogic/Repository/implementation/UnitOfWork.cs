@@ -45,6 +45,23 @@ namespace BusinessLogic.Repository.implementation
         private GenericRepository<Category> _categoryRepository;
         private GenericRepository<Ingredient> _ingredientRepository;
         private GenericRepository<Measure> _measureRepository;
+        private GenericRepository<DishImage> _dishImageRepository;
+
+
+        public GenericRepository<DishImage> DishImageRepository
+        {
+            get
+            {
+
+                if (this._dishImageRepository == null)
+                {
+                    this._dishImageRepository = new GenericRepository<DishImage>(_context);
+                }
+                return _dishImageRepository;
+            }
+        }
+
+
         public GenericRepository<Product> ProductRepository
         {
             get

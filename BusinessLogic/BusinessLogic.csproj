@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Logic\CookingDay.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\ModelDb.cs" />

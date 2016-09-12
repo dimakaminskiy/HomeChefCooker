@@ -18,15 +18,18 @@ namespace WinHomeMeal
         public void Run()
         {
 
-             InitializeCategoryRepository();
-            // InitializeMeasureRepository();
-           // InitializeProductRepository();
-           // DataManager.Save();
+            InitializeCategoryRepository();
+            InitializeMeasureRepository();
+            InitializeProductRepository();
+            DataManager.Save();
         }
         private void InitializeMeasureRepository()
         {
-           DataManager.MeasureRepository.Insert(new Measure() { Name = "г." });
+           DataManager.MeasureRepository.Insert(new Measure() { Name = "------" });
            DataManager.MeasureRepository.Insert(new Measure() { Name = "шт" });
+           DataManager.MeasureRepository.Insert(new Measure() { Name = "г." });
+           DataManager.MeasureRepository.Insert(new Measure() { Name = "чайная ложка" });
+           DataManager.MeasureRepository.Insert(new Measure() { Name = "столовая ложка" });
         }
         private void InitializeProductRepository()
         {
@@ -45,11 +48,13 @@ namespace WinHomeMeal
                 }
             }
 
+            DataManager.ProductRepository.Insert(new Product() { Name = "------" });
+
             foreach (string line in lines)
             {
                 DataManager.ProductRepository.Insert( new Product() {Name = line});
             }
-            DataManager.Save();
+        
 
         }
         protected static bool needToReOrder(string s1, string s2)
@@ -63,7 +68,7 @@ namespace WinHomeMeal
         }
         private void InitializeCategoryRepository()
        {
-           string[] categories = {"Завтрак","Первые блюда", "Вторые блюда", "Мясное", "Рыба", "Десерт","Разное"};
+           string[] categories = { "------", "Завтрак","Первые блюда", "Вторые блюда", "Мясное", "Рыба", "Десерт","Разное"};
 
            foreach (var category in categories)
            {

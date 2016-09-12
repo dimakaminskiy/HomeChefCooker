@@ -8,6 +8,17 @@ namespace WinHomeMeal
         public string Name { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
-        public virtual IEnumerable<Ingredient> IngredientS { get; set; }
+        public virtual List<Ingredient> Ingredients { get; set; }
+        public virtual List<DishImage> DishImages { get; set; }
+
     }
+
+    public class DishImage
+    {
+        public int Id { get; set; }
+        public int DishId { get;  set; }
+        public byte[] Image { get; set; }
+    }
+
+
 }

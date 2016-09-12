@@ -22,7 +22,7 @@ namespace WinHomeMeal.Presenter
         {
             Form = form;
             DataManager = UnitOfWork.GetInstance();
-            Categoris = DataManager.CategoryRepository.Get().OrderBy(t => t.Name).ToList();
+            Categoris = DataManager.CategoryRepository.Get(t=>t.Id!=1 ).OrderBy(t => t.Name).ToList();
         }
 
         public void FillCategoris()

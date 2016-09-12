@@ -31,9 +31,9 @@ namespace WinHomeMeal.View.Dish
 
             Ingredients = new List<Ingredient>();
 
-            if (dish.IngredientS != null)
+            if (dish.Ingredients != null)
             {
-                Ingredients.AddRange(dish.IngredientS.ToArray());
+                Ingredients.AddRange(dish.Ingredients.ToArray());
             }
 
             

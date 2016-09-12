@@ -36,7 +36,7 @@ namespace WinHomeMeal
         }
         private void InitializeDataBase()
         {
-            Initializer.Run();
+          //  Initializer.Run();
         }
         private void InitializeDessertCombobox()
         {

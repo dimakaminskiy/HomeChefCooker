@@ -14,5 +14,6 @@
         public DbSet<Measure> Measures { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Dish> Dishes { get; set; }
+        public DbSet<DishImage> DishImages { get; set; }
     }
 }

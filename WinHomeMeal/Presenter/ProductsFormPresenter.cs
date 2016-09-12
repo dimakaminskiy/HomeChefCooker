@@ -21,7 +21,7 @@ namespace WinHomeMeal.Presenter
         {
             Form = form;
             DataManager = UnitOfWork.GetInstance();
-            Products = DataManager.ProductRepository.Get().OrderBy(t => t.Name).ToList();
+            Products = DataManager.ProductRepository.Get(t => t.Id != 1).OrderBy(t => t.Name).ToList();
         }
 
         public void FillProducts()

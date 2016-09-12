@@ -26,7 +26,6 @@ namespace WinHomeMeal.Presenter
        public void InitializeComboDishCategories()
        {
             var result = new List<Category>();
-            result.Add(new Category { Id = 0, Name = "Все категории" });
             var types = DataManager.CategoryRepository.Get().OrderBy(t => t.Name);
             result.AddRange(types);
 

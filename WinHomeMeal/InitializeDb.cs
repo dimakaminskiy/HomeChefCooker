@@ -18,6 +18,8 @@ namespace WinHomeMeal
         public void Run()
         {
 
+            var categories = DataManager.CategoryRepository.Get();
+
             InitializeCategoryRepository();
             InitializeMeasureRepository();
             InitializeProductRepository();

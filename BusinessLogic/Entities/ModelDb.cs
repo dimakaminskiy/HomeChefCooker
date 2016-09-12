@@ -8,7 +8,18 @@
             : base("name=ModelDb")
         {
         }
-        
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+
+            Database.SetInitializer(
+       new DropCreateDatabaseIfModelChanges<ModelDb>());
+
+
+
+            //Database.SetInitializer<ModelDb>(null);
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Measure> Measures { get; set; }

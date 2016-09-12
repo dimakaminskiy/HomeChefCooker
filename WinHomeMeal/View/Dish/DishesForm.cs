@@ -43,7 +43,10 @@ namespace WinHomeMeal.View.Dish
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-           var f = new DishEditForm( new WinHomeMeal.Dish());
+            var dish = new WinHomeMeal.Dish();
+            dish.Ingredients = new List<Ingredient>();
+            dish.DishImages = new List<DishImage>();
+            var f = new DishEditForm(dish);
             f.ShowDialog();
         }
     }

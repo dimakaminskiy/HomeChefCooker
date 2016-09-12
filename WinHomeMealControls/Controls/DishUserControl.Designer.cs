@@ -35,8 +35,6 @@
             this.btnDownload = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.picImage = new System.Windows.Forms.PictureBox();
             this.ingredientUserControl8 = new WinHomeMeal.Controls.IngredientUserControl();
             this.ingredientUserControl7 = new WinHomeMeal.Controls.IngredientUserControl();
             this.ingredientUserControl6 = new WinHomeMeal.Controls.IngredientUserControl();
@@ -45,6 +43,8 @@
             this.ingredientUserControl3 = new WinHomeMeal.Controls.IngredientUserControl();
             this.ingredientUserControl2 = new WinHomeMeal.Controls.IngredientUserControl();
             this.ingredientUserControl1 = new WinHomeMeal.Controls.IngredientUserControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picImage = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
@@ -135,25 +135,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Продукты";
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(467, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(407, 50);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Название";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picImage
-            // 
-            this.picImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.picImage.Location = new System.Drawing.Point(16, 13);
-            this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(445, 270);
-            this.picImage.TabIndex = 0;
-            this.picImage.TabStop = false;
-            // 
             // ingredientUserControl8
             // 
             this.ingredientUserControl8.Location = new System.Drawing.Point(10, 230);
@@ -210,6 +191,25 @@
             this.ingredientUserControl1.Size = new System.Drawing.Size(470, 25);
             this.ingredientUserControl1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(467, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(407, 50);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Название";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picImage
+            // 
+            this.picImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.picImage.Location = new System.Drawing.Point(16, 13);
+            this.picImage.Name = "picImage";
+            this.picImage.Size = new System.Drawing.Size(445, 270);
+            this.picImage.TabIndex = 0;
+            this.picImage.TabStop = false;
+            // 
             // DishUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,9 +240,9 @@
         public IngredientUserControl ingredientUserControl3;
         public IngredientUserControl ingredientUserControl2;
         public IngredientUserControl ingredientUserControl1;
-        private System.Windows.Forms.Button btnDell;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnPrev;
-        private System.Windows.Forms.Button btnDownload;
+        public System.Windows.Forms.Button btnDell;
+        public System.Windows.Forms.Button btnNext;
+        public System.Windows.Forms.Button btnPrev;
+        public System.Windows.Forms.Button btnDownload;
     }
 }

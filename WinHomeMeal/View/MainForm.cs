@@ -18,6 +18,9 @@ namespace WinHomeMeal
         public InitializerDb Initializer { get; set; }
         IEnumerable<DayMenuUserControl> DayMenuControls { get; set; }
 
+        public int GetMealCountDay { get; set; }
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -60,35 +63,7 @@ namespace WinHomeMeal
 
         }
 
-        //private void CookingDay_OnFullNameChangeEventHandler(object sender, string fullName)
-        //{
-        //    var day = sender as CookingDay;
-        //    if (day == null) return;
 
-        //    int id = day.Id;
-        //    var control = GetDayMenuUserControlById(id);
-        //    control.DayFullName = fullName;
-        //}
-
-        //private void CookingDay_OnDinnerDishChange(object sender)
-        //{
-        //    var day = sender as CookingDay;
-        //    if (day==null) return;
-
-        //    int id = day.Id;
-        //    var control = GetDayMenuUserControlById(id);
-        //    control.DinnerFistDish = day.Dinner.FirstDish.Name;
-        //    control.DinnerSecondDish = day.Dinner.SecondDish.Name;
-        //}
-
-        //private void CookingDay_OnBreakfastDishChange(object sender)
-        //{
-        //    var day = sender as CookingDay;
-        //    if (day == null) return;
-        //    int id = day.Id;
-        //    var control = GetDayMenuUserControlById(id);
-        //    control.Breakfast = day.Breakfast.BreakfastDish.Name;
-        //}
 
         private  DayMenuUserControl GetDayMenuUserControlById(int id)
         {

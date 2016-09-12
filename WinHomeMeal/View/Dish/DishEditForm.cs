@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic.Helper;
 using BusinessLogic.Repository.implementation;
 using WinHomeMeal.Controls;
-using WinHomeMeal;
 
 namespace WinHomeMeal.View.Dish
 {
@@ -19,28 +15,80 @@ namespace WinHomeMeal.View.Dish
         public UnitOfWork DataManager { get; }
         public List<WinHomeMeal.Product> Products { get; set; }
         public List<WinHomeMeal.Measure> Measures { get; set; }
-
         public List<Ingredient> Ingredients;
-
+        public List<DishImage> DishImages { get; set; }
+        public int? DishImageIndex { get; set; }
         IEnumerable<IngredientUserControl> IngredientUserControls { get; set; }
-
-        
+        private PictureBox DishPicturebox {get { return dishUserControl1.picImage; } }
         public DishEditForm( WinHomeMeal.Dish dish)
         {
             Dish = dish;
-
+            DishImages = new List<DishImage>();
             Ingredients = new List<Ingredient>();
 
+            if (Dish.DishImages != null)
+            {
+                DishImages.AddRange(Dish.DishImages);
+            }
+            
             if (dish.Ingredients != null)
             {
                 Ingredients.AddRange(dish.Ingredients.ToArray());
             }
-
             
+            dishUserControl1.btnDownload.Click += BtnDownload_Click;
+            dishUserControl1.btnNext.Click += BtnNext_Click;
+            dishUserControl1.btnPrev.Click += BtnPrev_Click;
 
             DataManager = UnitOfWork.GetInstance();
             InitializeComponent();
             Initialize();
+        }
+        private void BtnPrev_Click(object sender, EventArgs e)
+        {
+            SetPrevImage();
+        }
+        private void BtnNext_Click(object sender, EventArgs e)
+        {
+            SetNexImage();
+        }
+
+        private void BtnDownload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog x = new OpenFileDialog();
+            x.Multiselect = true;
+            x.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.png) | *.jpg; *.jpeg; *.jpe; *.png";
+
+            DialogResult dialogResult   =   x.ShowDialog();
+
+            if (dialogResult!= DialogResult.OK) return;
+            string[] result = x.FileNames;
+
+            string[] extentions = {".jpg, .jpeg, .jpe, .png"};
+
+            List<DishImage> images = new List<DishImage>();
+
+            foreach (var s in result)
+            {
+                if (!File.Exists(s)) continue;
+                var ext = Path.GetExtension(s);
+                if (extentions.All(t=>t!=ext)) continue;
+
+                try
+                {
+                   var image =  ImageHelper.LoadImageNoLock(s);
+                   var img =  ImageHelper.ResizeImage(image, 450, 250);
+                   var bytes = ImageHelper.ImageToByteArray(img);
+                   images.Add( new DishImage() {DishId =  Dish.Id, Image = bytes });
+                 }
+                catch (Exception) { }
+             }
+            
+            if (images.Any())
+            {
+                DishImages.AddRange(DishImages);
+                BtnNext_Click(null,null);
+            }
         }
 
         void Initialize()
@@ -48,6 +96,58 @@ namespace WinHomeMeal.View.Dish
             Products = DataManager.ProductRepository.Get().OrderBy(t => t.Name).ToList();
             Measures = DataManager.MeasureRepository.Get().OrderBy(t => t.Name).ToList();
             IngredientUserControls = dishUserControl1.Controls.OfType<IngredientUserControl>().ToArray();
+        }
+
+
+        private void SetNexImage()
+        {
+
+            if (DishImages.Any()) return;
+
+            if (DishImageIndex == null)
+            {
+                DishImageIndex = 0;
+            }
+            else
+            {
+                if (DishImageIndex != DishImages.Count)
+                {
+                    DishImageIndex ++;
+                }
+                else
+                {
+                    DishImageIndex = 0;
+                }
+            }
+
+            if (DishImageIndex == null) return;
+            DishPicturebox.Image = ImageHelper.ByteArrayToImage(DishImages[DishImageIndex.Value].Image);
+            
+        }
+
+        void SetPrevImage()
+        {
+            if (!DishImages.Any()) return;
+
+            if (DishImageIndex == null)
+            {
+                DishImageIndex = 0;
+            }
+            else
+            {
+                if (DishImageIndex != 0)
+                {
+                    DishImageIndex--;
+                }
+                else
+                {
+                    DishImageIndex = DishImages.Count;
+                }
+            }
+
+
+            if (DishImageIndex == null) return;
+            DishPicturebox.Image = ImageHelper.ByteArrayToImage(DishImages[DishImageIndex.Value].Image);
         }
 
         void FillIngredientUserControls()

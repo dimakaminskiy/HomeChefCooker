@@ -18,14 +18,45 @@ namespace WinHomeMeal
         public void Run()
         {
 
-            var categories = DataManager.CategoryRepository.Get();
+           
 
             InitializeCategoryRepository();
             InitializeMeasureRepository();
             InitializeProductRepository();
             DataManager.Save();
+            InitializeDishRepository();
+           
         }
-        private void InitializeMeasureRepository()
+
+
+       public void InitializeDishRepository()
+       {
+           var dish = new Dish();
+            var categories = DataManager.CategoryRepository.Get();
+           dish.CategoryId = DataManager.CategoryRepository.Get().First().Id;
+           dish.Name = "Тест";
+            DataManager.Save();
+            DataManager.DishRepository.Insert(dish);
+           dish.Ingredients = new List<Ingredient>();
+           dish.Ingredients.Add(new Ingredient() {MeasureId = 1, ProductId = 1, Value = 0, DishId = dish.Id});
+           dish.Ingredients.Add(new Ingredient() {MeasureId = 1, ProductId = 1, Value = 0, DishId = dish.Id});
+           dish.Ingredients.Add(new Ingredient() {MeasureId = 1, ProductId = 1, Value = 0, DishId = dish.Id});
+           dish.Ingredients.Add(new Ingredient() {MeasureId = 1, ProductId = 1, Value = 0, DishId = dish.Id});
+           dish.Ingredients.Add(new Ingredient() {MeasureId = 1, ProductId = 1, Value = 0, DishId = dish.Id});
+           dish.Ingredients.Add(new Ingredient() {MeasureId = 1, ProductId = 1, Value = 0, DishId = dish.Id});
+           dish.Ingredients.Add(new Ingredient() {MeasureId = 1, ProductId = 1, Value = 0, DishId = dish.Id});
+           dish.Ingredients.Add(new Ingredient() {MeasureId = 1, ProductId = 1, Value = 0, DishId = dish.Id});
+
+            DataManager.Save();
+
+        }
+
+
+
+
+
+
+       private void InitializeMeasureRepository()
         {
            DataManager.MeasureRepository.Insert(new Measure() { Name = "------" });
            DataManager.MeasureRepository.Insert(new Measure() { Name = "шт" });

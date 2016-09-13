@@ -22,6 +22,10 @@ namespace WinHomeMeal.View.Dish
         private PictureBox DishPicturebox {get { return dishUserControl1.picImage; } }
         public DishEditForm( WinHomeMeal.Dish dish)
         {
+            DataManager = UnitOfWork.GetInstance();
+            InitializeComponent();
+            Initialize();
+
             Dish = dish;
             DishImages = new List<DishImage>();
             Ingredients = new List<Ingredient>();
@@ -39,10 +43,6 @@ namespace WinHomeMeal.View.Dish
             dishUserControl1.btnDownload.Click += BtnDownload_Click;
             dishUserControl1.btnNext.Click += BtnNext_Click;
             dishUserControl1.btnPrev.Click += BtnPrev_Click;
-
-            DataManager = UnitOfWork.GetInstance();
-            InitializeComponent();
-            Initialize();
         }
         private void BtnPrev_Click(object sender, EventArgs e)
         {
@@ -64,7 +64,7 @@ namespace WinHomeMeal.View.Dish
             if (dialogResult!= DialogResult.OK) return;
             string[] result = x.FileNames;
 
-            string[] extentions = {".jpg, .jpeg, .jpe, .png"};
+            string[] extentions = {".jpg", ".jpeg", ".jpe", ".png"};
 
             List<DishImage> images = new List<DishImage>();
 
@@ -72,21 +72,26 @@ namespace WinHomeMeal.View.Dish
             {
                 if (!File.Exists(s)) continue;
                 var ext = Path.GetExtension(s);
-                if (extentions.All(t=>t!=ext)) continue;
-
-                try
+                if (extentions.Any(t => t == ext))
                 {
-                   var image =  ImageHelper.LoadImageNoLock(s);
-                   var img =  ImageHelper.ResizeImage(image, 450, 250);
-                   var bytes = ImageHelper.ImageToByteArray(img);
-                   images.Add( new DishImage() {DishId =  Dish.Id, Image = bytes });
-                 }
-                catch (Exception) { }
-             }
+                    try
+                    {
+                        var image = ImageHelper.LoadImageNoLock(s);
+                        var img = ImageHelper.ResizeImage(image, 450, 250);
+                        var bytes = ImageHelper.ImageToByteArray(img);
+                        images.Add(new DishImage() {DishId = Dish.Id, Image = bytes});
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+
+
+            }
             
             if (images.Any())
             {
-                DishImages.AddRange(DishImages);
+                DishImages.AddRange(images);
                 BtnNext_Click(null,null);
             }
         }
@@ -95,14 +100,29 @@ namespace WinHomeMeal.View.Dish
         {
             Products = DataManager.ProductRepository.Get().OrderBy(t => t.Name).ToList();
             Measures = DataManager.MeasureRepository.Get().OrderBy(t => t.Name).ToList();
-            IngredientUserControls = dishUserControl1.Controls.OfType<IngredientUserControl>().ToArray();
+            IngredientUserControls = dishUserControl1.groupIngredientUserControl.Controls.OfType<IngredientUserControl>().ToArray();
+            FillIngredientUserControls();
+        }
+
+
+        void FillIngredientUserControls()
+        {
+            foreach (var control in IngredientUserControls)
+            {
+                control.comboProduct.DataSource = Products;
+                control.comboProduct.ValueMember = "Id";
+                control.comboProduct.DisplayMember = "Name";
+                control.comboMeasure.DataSource = Measures;
+                control.comboMeasure.ValueMember = "Id";
+                control.comboMeasure.DisplayMember = "Name";
+            }
         }
 
 
         private void SetNexImage()
         {
 
-            if (DishImages.Any()) return;
+            if (!DishImages.Any()) return;
 
             if (DishImageIndex == null)
             {
@@ -110,7 +130,7 @@ namespace WinHomeMeal.View.Dish
             }
             else
             {
-                if (DishImageIndex != DishImages.Count)
+                if (DishImageIndex != DishImages.Count-1)
                 {
                     DishImageIndex ++;
                 }
@@ -150,21 +170,7 @@ namespace WinHomeMeal.View.Dish
             DishPicturebox.Image = ImageHelper.ByteArrayToImage(DishImages[DishImageIndex.Value].Image);
         }
 
-        void FillIngredientUserControls()
-        {
-
-            //var count = IngredientUserControls.Count();
-            //var dishCount = Ingredients.Count;
-
-
-            //while (count != dishCount)
-            //{
-            //    Ingredients.Add( new Ingredient() { Id =0, new WinHomeMeal.Measure(),0, new Pre)});
-            //}
-
-
-
-        }
+       
 
 
 

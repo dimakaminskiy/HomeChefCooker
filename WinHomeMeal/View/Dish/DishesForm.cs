@@ -23,7 +23,7 @@ namespace WinHomeMeal.View.Dish
 
         public void Initialize()
         {
-            Presenter.InitializeComboDishCategories();
+            Presenter.Initialize();
         }
 
         private void btnApplyFilters_Click(object sender, EventArgs e)
@@ -39,15 +39,22 @@ namespace WinHomeMeal.View.Dish
         private void btnEdit_Click(object sender, EventArgs e)
         {
 
+
+            var element = ListDishes.SelectedItems[0];
+            if (element == null) return;
+
+            Presenter.Edit(int.Parse(element.Tag.ToString()));
+            ListDishes.Select();
+            
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            var dish = new WinHomeMeal.Dish();
-            dish.Ingredients = new List<Ingredient>();
-            dish.DishImages = new List<DishImage>();
-            var f = new DishEditForm(dish);
-            f.ShowDialog();
+            //var dish = new WinHomeMeal.Dish();
+            //dish.Ingredients = new List<Ingredient>();
+            //dish.DishImages = new List<DishImage>();
+            //var f = new DishEditForm(dish);
+            //f.ShowDialog();
         }
     }
 }

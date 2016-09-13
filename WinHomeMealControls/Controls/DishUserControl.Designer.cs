@@ -34,7 +34,7 @@
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupIngredientUserControl = new System.Windows.Forms.GroupBox();
             this.ingredientUserControl8 = new WinHomeMeal.Controls.IngredientUserControl();
             this.ingredientUserControl7 = new WinHomeMeal.Controls.IngredientUserControl();
             this.ingredientUserControl6 = new WinHomeMeal.Controls.IngredientUserControl();
@@ -46,7 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupIngredientUserControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.btnPrev);
             this.panel1.Controls.Add(this.btnDownload);
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.groupIngredientUserControl);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.picImage);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -118,22 +118,22 @@
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
-            // groupBox1
+            // groupIngredientUserControl
             // 
-            this.groupBox1.Controls.Add(this.ingredientUserControl8);
-            this.groupBox1.Controls.Add(this.ingredientUserControl7);
-            this.groupBox1.Controls.Add(this.ingredientUserControl6);
-            this.groupBox1.Controls.Add(this.ingredientUserControl5);
-            this.groupBox1.Controls.Add(this.ingredientUserControl4);
-            this.groupBox1.Controls.Add(this.ingredientUserControl3);
-            this.groupBox1.Controls.Add(this.ingredientUserControl2);
-            this.groupBox1.Controls.Add(this.ingredientUserControl1);
-            this.groupBox1.Location = new System.Drawing.Point(467, 58);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 272);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Продукты";
+            this.groupIngredientUserControl.Controls.Add(this.ingredientUserControl8);
+            this.groupIngredientUserControl.Controls.Add(this.ingredientUserControl7);
+            this.groupIngredientUserControl.Controls.Add(this.ingredientUserControl6);
+            this.groupIngredientUserControl.Controls.Add(this.ingredientUserControl5);
+            this.groupIngredientUserControl.Controls.Add(this.ingredientUserControl4);
+            this.groupIngredientUserControl.Controls.Add(this.ingredientUserControl3);
+            this.groupIngredientUserControl.Controls.Add(this.ingredientUserControl2);
+            this.groupIngredientUserControl.Controls.Add(this.ingredientUserControl1);
+            this.groupIngredientUserControl.Location = new System.Drawing.Point(467, 58);
+            this.groupIngredientUserControl.Name = "groupIngredientUserControl";
+            this.groupIngredientUserControl.Size = new System.Drawing.Size(485, 272);
+            this.groupIngredientUserControl.TabIndex = 2;
+            this.groupIngredientUserControl.TabStop = false;
+            this.groupIngredientUserControl.Text = "Продукты";
             // 
             // ingredientUserControl8
             // 
@@ -219,17 +219,14 @@
             this.Size = new System.Drawing.Size(963, 657);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.groupIngredientUserControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.RichTextBox richTextBox1;
         public System.Windows.Forms.PictureBox picImage;
         public IngredientUserControl ingredientUserControl8;
@@ -244,5 +241,7 @@
         public System.Windows.Forms.Button btnNext;
         public System.Windows.Forms.Button btnPrev;
         public System.Windows.Forms.Button btnDownload;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.GroupBox groupIngredientUserControl;
     }
 }

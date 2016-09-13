@@ -42,7 +42,7 @@ namespace WinHomeMeal.View.Measure
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ListMeasures
+            // ListView
             // 
             this.ListMeasures.Alignment = System.Windows.Forms.ListViewAlignment.Left;
             this.ListMeasures.BorderStyle = System.Windows.Forms.BorderStyle.None;

@@ -39,8 +39,11 @@ namespace WinHomeMeal
         }
         private void InitializeDataBase()
         {
-           // if (!DataManager.CategoryRepository.Get().Any())
+            if (!DataManager.CategoryRepository.Get().Any())
                 Initializer.Run();
+
+            if (!DataManager.DishRepository.Get().Any())
+                Initializer.InitializeDishRepository();
         }
         private void InitializeDessertCombobox()
         {

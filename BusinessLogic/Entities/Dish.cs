@@ -18,6 +18,8 @@ namespace WinHomeMeal
         public int Id { get; set; }
         public int DishId { get;  set; }
         public byte[] Image { get; set; }
+        public virtual Dish Dish { get; set; }
+
     }
 
 

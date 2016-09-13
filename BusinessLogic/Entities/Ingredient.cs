@@ -7,7 +7,8 @@
         public int ProductId { get; set; }
         public int Value { get; set; }
         public int MeasureId { get; set; }
-
+        public int DishId { get; set; }
+        public virtual Dish Dish { get; set; }
         public virtual Measure Measure { get; set; }
         public virtual Product Product { get; set; }
     }
